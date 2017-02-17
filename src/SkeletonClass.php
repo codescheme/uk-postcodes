@@ -1,6 +1,6 @@
 <?php
 
-namespace League\Skeleton;
+namespace codescheme\uk-postcodes;
 
 class SkeletonClass
 {

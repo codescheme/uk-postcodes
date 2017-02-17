@@ -1,18 +1,18 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "codescheme/uk-postcodes",
     "type": "library",
-    "description": ":package_description",
+    "description": "UK Postcodes via postcodes.io php class",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "codescheme",
+        "uk-postcodes"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/codescheme/uk-postcodes",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Codescheme",
+            "email": "codescheme@gmail.com",
+            "homepage": "http://codescheme.co.uk",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            ":vendor\\:package_name\\": "src"
+            "codescheme\\uk-postcodes\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":vendor\\:package_name\\": "tests"
+            "codescheme\\uk-postcodes\\": "tests"
         }
     },
     "scripts": {
