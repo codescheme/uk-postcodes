@@ -36,10 +36,6 @@ $skeleton = new codescheme\uk-postcodes();
 echo $skeleton->echoPhrase('Hello, League!');
 ```
 
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
 ## Testing
 
 ``` bash

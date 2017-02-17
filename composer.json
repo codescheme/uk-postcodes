@@ -1,7 +1,7 @@
 {
     "name": "codescheme/uk-postcodes",
     "type": "library",
-    "description": "UK Postcodes via postcodes.io php class",
+    "description": "UK postcode validation and reverse geocoding via postcodes.io and php",
     "keywords": [
         "codescheme",
         "uk-postcodes"
