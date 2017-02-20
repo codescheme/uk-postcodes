@@ -33,10 +33,15 @@ class Postcode
     {
         $this->headers = [
             'User-Agent' => 'CodeschemePostcodes/0.1 https://github.com/codescheme/uk-postcodes',
-            'Accept'     => 'application/json',
+            'Accept'     => 'application/json'
         ];
 
-        $this->client = new Client(['base_uri' => $this->base_uri,  'headers' => $this->headers, 'http_errors' => false, 'verify' => __DIR__ . '/cacert.pem']);
+        $this->client = new Client([
+            'base_uri' => $this->base_uri,
+            'headers' => $this->headers,
+            'http_errors' => false,
+            'verify' => __DIR__ . '/cacert.pem'
+        ]);
     }
 
     /**
