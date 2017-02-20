@@ -3,8 +3,9 @@
     "type": "library",
     "description": "UK postcode validation and reverse geocoding via postcodes.io and php",
     "keywords": [
-        "codescheme",
-        "uk-postcodes"
+        "geocoding",
+        "postcodes",
+        "uk"
     ],
     "homepage": "https://github.com/codescheme/uk-postcodes",
     "license": "MIT",
@@ -12,12 +13,13 @@
         {
             "name": "Codescheme",
             "email": "codescheme@gmail.com",
-            "homepage": "http://codescheme.co.uk",
-            "role": "Developer"
+            "homepage": "http://codescheme.co.uk"
         }
     ],
     "require": {
-        "php" : "~5.6|~7.0"
+        "php" : "~5.6|~7.0",
+        "guzzlehttp/guzzle": "~6.0",
+        "guzzlehttp/psr7": "^1.3"
     },
     "require-dev": {
         "phpunit/phpunit" : "~4.0||~5.0",
@@ -25,23 +27,18 @@
     },
     "autoload": {
         "psr-4": {
-            "codescheme\\uk-postcodes\\": "src"
+            "Codescheme\\Ukpostcodes\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "codescheme\\uk-postcodes\\": "tests"
+            "Codescheme\\Ukpostcodes\\": "tests"
         }
     },
     "scripts": {
         "test": "phpunit",
         "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
         "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
     },
     "config": {
         "sort-packages": true

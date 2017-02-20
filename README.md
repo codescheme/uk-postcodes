@@ -1,24 +1,14 @@
-# uk-postcodes
+# UK Postcodes
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+A php API client for the methods at ```postcodes.io``` - useful for UK postcode validation and reverse geocoding: that is, determining postcode from lat, long coordinates.
+**No fiddling around with api keys, authentication, necessary...**
 
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
+With thanks to https://postcodes.io
 
 
 ## Install
@@ -29,11 +19,40 @@ Via Composer
 $ composer require codescheme/uk-postcodes
 ```
 
-## Usage
+## Basic Usage
 
-``` php
-$skeleton = new codescheme\uk-postcodes();
-echo $skeleton->echoPhrase('Hello, League!');
+Return data for a given postcode
+
+```php
+use Codescheme\Ukpostcodes\Postcode;
+
+$client = new Postcode();
+
+$results = $client->postcodeLookup('SE21 8JL');
+
+if ($results->status === 200) {
+    print_r($results);
+}
+```
+
+## Methods
+
+```
+->validate('SE31 9AX'); //returns boolean
+->postcodeLookup('SE21 8JL');
+->nearest('SE21 8JL');
+->reverseGeocode(-0.397913, 51.44015); // lng,lat
+->autocomplete('RG1 3');
+->outcodeLookup('SE21');
+
+$postcodes = ['OX49 5NU', 'M32 0JG', 'NE30 1DP'];
+->postcodeLookupBulk($postcodes);
+	
+$coordinates = [
+    ['longitude' =>  0.629834723775309, 'latitude' => 51.7923246977375],
+    ['longitude' => -2.49690382054704, 	'latitude' => 53.5351312861402]
+    ];
+->reverseGeocodeBulk($coordinates);
 ```
 
 ## Testing
@@ -41,19 +60,6 @@ echo $skeleton->echoPhrase('Hello, League!');
 ``` bash
 $ composer test
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
-
-## Security
-
-If you discover any security related issues, please email codescheme@gmail.com instead of using the issue tracker.
-
-## Credits
-
-- [Codescheme][link-author]
-- [All Contributors][link-contributors]
 
 ## License
 
